@@ -1,0 +1,79 @@
+{
+  "version": 4,
+  "terraform_version": "1.14.6",
+  "serial": 8,
+  "lineage": "02168b30-a42c-b482-e67f-d8e1a912ea47",
+  "outputs": {},
+  "resources": [
+    {
+      "mode": "managed",
+      "type": "sonarqube_group",
+      "name": "project_users",
+      "provider": "provider[\"registry.terraform.io/jdamata/sonarqube\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "description": "This is a group",
+            "id": "67d83162-a6e0-425c-bd8c-c4b2b0ff6ea9",
+            "name": "Project-Users"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "bnVsbA=="
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "sonarqube_permission_template",
+      "name": "template",
+      "provider": "provider[\"registry.terraform.io/jdamata/sonarqube\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "default": null,
+            "description": "These are internal projects",
+            "id": "cb830e68-f3c6-4726-9825-0c0331853b9d",
+            "name": "Internal-Projects",
+            "project_key_pattern": "internal.*"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "bnVsbA=="
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "sonarqube_permissions",
+      "name": "project_users",
+      "provider": "provider[\"registry.terraform.io/jdamata/sonarqube\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "group_name": "Project-Users",
+            "id": "group-Project-Users-t_cb830e68-f3c6-4726-9825-0c0331853b9d-permissions",
+            "login_name": null,
+            "permissions": [
+              "admin"
+            ],
+            "project_key": null,
+            "special_group_name": null,
+            "template_id": "cb830e68-f3c6-4726-9825-0c0331853b9d",
+            "template_name": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "bnVsbA==",
+          "dependencies": [
+            "sonarqube_permission_template.template"
+          ]
+        }
+      ]
+    }
+  ],
+  "check_results": null
+}
